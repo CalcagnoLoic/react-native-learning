@@ -9,19 +9,9 @@ const FormField = ({
   ...props
 }) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.form_title}>FormField</Text>
+    <View className={`space-y-2 ${otherStyle}`}>
+      <Text className="text-base text-gray-100 font-pmedium">FormField</Text>
     </View>
   );
 };
 export default FormField;
-const styles = StyleSheet.create({
-  container: {
-    gap: 8,
-  },
-  form_title: {
-    fontSize: 16,
-    color: "#f3f4f6",
-    fontFamily: "PoppinsMedium",
-  },
-});

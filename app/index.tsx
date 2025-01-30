@@ -7,38 +7,38 @@ import CustomButton from "@/components/CustomButton";
 
 export default function Index() {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView className="bg-primary h-full">
       <ScrollView
         contentContainerStyle={{
           height: "100%",
         }}
       >
-        <View style={styles.container__view}>
+        <View className="w-full items-center justify-center -min-h-screen-safe-or-72 px-4">
           <Image
             source={images.logo}
-            style={styles.logo}
+            className="w-[130px] h-[84px]"
             resizeMode="contain"
           />
 
           <Image
             source={images.cards}
-            style={styles.cards__logo}
+            className="max-w-[380px] w-full h-[298px]"
             resizeMode="contain"
           />
 
-          <View style={styles.onboarding__text}>
-            <Text style={styles.primary_text}>
+          <View className="relative mt-5">
+            <Text className="text-3xl text-white font-bold text-center">
               Discover Endless Possibilities with{" "}
-              <Text style={styles.text_secondary}>Aora</Text>
+              <Text className="text-secondary-200">Aora</Text>
             </Text>
             <Image
               source={images.path}
-              style={styles.underline_logo}
+              className="w-[136px] h-[15px] absolute -bottom-2 left-32"
               resizeMode="contain"
             />
           </View>
 
-          <Text style={styles.paragraph}>
+          <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">
             Where creativity meets innovation: embark on a journey of limitless
             exploration with Aora
           </Text>
@@ -46,7 +46,7 @@ export default function Index() {
           <CustomButton
             title="Continue with Email"
             handlePress={() => router.push("/sign-in")}
-            containerStyles={styles.button_style}
+            containerStyles="w-full mt-7"
             isLoading={false}
           />
         </View>
@@ -57,55 +57,3 @@ export default function Index() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#161622",
-    flex: 1,
-  },
-  container__view: {
-    alignItems: "center",
-    paddingHorizontal: 16,
-    width: "100%",
-    minHeight: 85,
-  },
-  logo: {
-    width: 130,
-    height: 84,
-  },
-  cards__logo: {
-    maxWidth: 380,
-    height: 300,
-    width: "100%",
-  },
-  onboarding__text: {
-    position: "relative",
-    marginTop: 10,
-  },
-  primary_text: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center",
-    fontSize: 30,
-  },
-  text_secondary: {
-    color: "#FF8E01",
-  },
-  underline_logo: {
-    width: 136,
-    height: 15,
-    position: "absolute",
-    bottom: -5,
-    right: -32,
-  },
-  paragraph: {
-    fontSize: 10,
-    fontFamily: "Poppins-Regular",
-    color: "#f3f4f6",
-    marginTop: 28,
-    textAlign: "center",
-  },
-  button_style: {
-    marginTop: 28,
-    width: "100%",
-  },
-});

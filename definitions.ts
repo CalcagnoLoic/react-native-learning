@@ -10,7 +10,7 @@ export type tabsIcons = {
 export type customButton = {
   title: string;
   handlePress: () => void;
-  containerStyles: ViewStyle;
+  containerStyles: string;
   textStyles?: TextStyle;
   isLoading: boolean;
 };

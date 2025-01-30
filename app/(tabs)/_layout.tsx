@@ -3,23 +3,18 @@ import { Tabs, Redirect } from "expo-router";
 import { icons } from "@/constants";
 import { tabsIcons } from "@/definitions";
 
-const TabIcon = ({ icon, color, name, focused }:  tabsIcons ) => {
+const TabIcon = ({ icon, color, name, focused }: tabsIcons) => {
   return (
-    <View style={styles.container__tabs}>
+    <View className="flex items-center justify-center gap-2">
       <Image
         source={icon}
         resizeMode="contain"
         tintColor={color}
-        style={styles.tabs__home}
+        className="w-6 h-6"
       />
       <Text
-        style={{
-          fontSize: 10,
-          width: 100,
-          textAlign: "center",
-          fontFamily: focused ? "Poppins-SemiBold" : "Poppins-Regular",
-          color: color,
-        }}
+        className={`${focused ? "font-psemibold" : "font-pregular"} text-xs`}
+        style={{ color: color }}
       >
         {name}
       </Text>
@@ -106,16 +101,3 @@ const TabsLayout = () => {
   );
 };
 export default TabsLayout;
-
-const styles = StyleSheet.create({
-  tabs__home: {
-    width: 20,
-    height: 20,
-  },
-  container__tabs: {
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 4,
-    marginTop: 10,
-  },
-});

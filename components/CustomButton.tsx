@@ -10,28 +10,17 @@ const CustomButton = ({
 }: customButton) => {
   return (
     <TouchableOpacity
-      style={[styles.container, containerStyles, isLoading && { opacity: 0.5 }]}
+      className={`bg-secondary rounded-xl min-h-[62px] flex flex-row justify-center items-center ${containerStyles} ${
+        isLoading ? "opacity-50" : ""
+      }`}
       onPress={handlePress}
       activeOpacity={0.7}
       disabled={isLoading}
     >
-      <Text style={[styles.button_text, textStyles]}>{title}</Text>
+      <Text className={`text-primary font-psemibold text-lg ${textStyles}`}>
+        {title}
+      </Text>
     </TouchableOpacity>
   );
 };
 export default CustomButton;
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#FF8E01",
-    borderRadius: 12,
-    minHeight: 62,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  button_text: {
-    color: "#161622",
-    fontFamily: "Poppins-SemiBold",
-    fontSize: 18,
-  },
-});

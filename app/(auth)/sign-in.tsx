@@ -22,21 +22,24 @@ const signIn = () => {
   });
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView className="bg-primary h-full">
       <ScrollView>
-        <View style={styles.container__view}>
+        <View className="w-full justify-center h-full  px-4 my-6">
           <Image
             source={images.logo}
             resizeMode="contain"
-            style={styles.logo}
+            className="w-[115px] h-[34px]"
           />
-          <Text style={styles.primary_title}>Log in to Aora</Text>
+
+          <Text className="text-2xl font-semibold text-white mt-10 font-psemibold">
+            Log in to Aora
+          </Text>
 
           <FormField
             title="Email"
             value={form.email}
             handleChangeText={(e: any) => setForm({ ...form, email: e })}
-            otherStyle={styles.form_field}
+            otherStyles="mt-7"
             keyboardType="email-address"
           />
 
@@ -44,7 +47,7 @@ const signIn = () => {
             title="password"
             value={form.password}
             handleChangeText={(e: any) => setForm({ ...form, password: e })}
-            otherStyle={styles.form_field}
+            otherStyles="mt-7"
             keyboardType="password"
           />
         </View>
@@ -53,30 +56,3 @@ const signIn = () => {
   );
 };
 export default signIn;
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#161622",
-    height: "100%",
-  },
-  container__view: {
-    justifyContent: "center",
-    paddingHorizontal: 16,
-    width: "100%",
-    height: "100%",
-    marginVertical: 20,
-  },
-  logo: {
-    width: 115,
-    height: 35,
-  },
-  primary_title: {
-    color: "white",
-    fontWeight: "semibold",
-    marginTop: 20,
-    fontSize: 20,
-    fontFamily: "Poppins-SemiBold",
-  },
-  form_field: {
-    marginTop: 14
-  }
-});
