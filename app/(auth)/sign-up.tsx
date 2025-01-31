@@ -6,15 +6,17 @@ import {
   View,
   Image,
   Dimensions,
+  Alert,
 } from "react-native";
 
 import { images } from "@/constants";
 import FormField from "@/components/FormField";
 import { useState } from "react";
 import CustomButton from "@/components/CustomButton";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
+import { createUser } from "@/lib/appwrite";
 
-const signUp = () => {
+const SignUp = () => {
   const [form, setForm] = useState({
     username: "",
     email: "",
@@ -23,14 +25,30 @@ const signUp = () => {
 
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
-  const submit = () => {
+  const submit = async () => {
     if (!form.email || !form.password || !form.username) {
-      alert("test");
+      Alert.alert("Error", "Please fill in all the fields");
+
+      setIsSubmitting(true);
+
+      /* try {
+        const result = await createUser(
+          form.email,
+          form.password,
+          form.username
+        );
+        router.replace('/home')
+      } catch (error) {
+        Alert.alert("Error", error.message);
+      } finally {
+        setIsSubmitting(false);
+      } */
 
       return;
     }
 
     console.log("Formulaire soumis avec succès :", form);
+    router.replace("/home");
   };
 
   return (
@@ -92,4 +110,4 @@ const signUp = () => {
     </SafeAreaView>
   );
 };
-export default signUp;
+export default SignUp;

@@ -1,20 +1,20 @@
 import {
-  StyleSheet,
   Text,
   SafeAreaView,
   ScrollView,
   View,
   Image,
-  Dimensions,
+  Alert,
 } from "react-native";
 
 import { images } from "@/constants";
 import FormField from "@/components/FormField";
 import { useState } from "react";
 import CustomButton from "@/components/CustomButton";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
+import { signIn } from "@/lib/appwrite";
 
-const signIn = () => {
+const SignIn = () => {
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -22,14 +22,26 @@ const signIn = () => {
 
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
-  const submit = () => {
+  const submit = async () => {
     if (!form.email || !form.password) {
-      alert("test");
+      Alert.alert("Error", "Please fill in all the fields");
+
+      setIsSubmitting(true);
+
+      /* try {
+        await signIn(form.email, form.password);
+        router.replace("/home");
+      } catch (error) {
+        Alert.alert("Error", error.message);
+      } finally {
+        setIsSubmitting(false);
+      } */
 
       return;
     }
 
-    console.log("Formulaire soumis avec succès :", form);
+    console.log("Formulaire soumis avec succès:", form);
+    router.replace("/home");
   };
 
   return (
@@ -84,4 +96,4 @@ const signIn = () => {
     </SafeAreaView>
   );
 };
-export default signIn;
+export default SignIn;
