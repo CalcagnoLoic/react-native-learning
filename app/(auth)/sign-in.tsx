@@ -11,9 +11,8 @@ import {
 import { images } from "@/constants";
 import FormField from "@/components/FormField";
 import { useState } from "react";
-
-const { height } = Dimensions.get("window");
-const heightInPix = height * 0.85;
+import CustomButton from "@/components/CustomButton";
+import { Link } from "expo-router";
 
 const signIn = () => {
   const [form, setForm] = useState({
@@ -21,10 +20,22 @@ const signIn = () => {
     password: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
+  const submit = () => {
+    if (!form.email || !form.password) {
+      alert("test");
+
+      return;
+    }
+
+    console.log("Formulaire soumis avec succès :", form);
+  };
+
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView>
-        <View className="w-full justify-center h-full  px-4 my-6">
+        <View className="w-full justify-center min-h-[83vh] px-4 my-6">
           <Image
             source={images.logo}
             resizeMode="contain"
@@ -44,12 +55,30 @@ const signIn = () => {
           />
 
           <FormField
-            title="password"
+            title="Password"
             value={form.password}
             handleChangeText={(e: any) => setForm({ ...form, password: e })}
             otherStyles="mt-7"
-            keyboardType="password"
           />
+
+          <CustomButton
+            title="Sign in"
+            handlePress={submit}
+            containerStyles="mt-7"
+            isLoading={isSubmitting}
+          />
+
+          <View className="justify-center pt-5 flex-row gap-2">
+            <Text className="text-lg text-gray-100 font-pregular">
+              Don'h have account?
+            </Text>
+            <Link
+              href="/sign-up"
+              className="text-lg font-psemibold text-secondary"
+            >
+              Sign Up
+            </Link>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>

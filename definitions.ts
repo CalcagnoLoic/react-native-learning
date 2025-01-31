@@ -14,3 +14,12 @@ export type customButton = {
   textStyles?: TextStyle;
   isLoading: boolean;
 };
+
+export type fieldProperties = {
+  title: string;
+  value: string;
+  handleChangeText: (newValue: any) => void;
+  otherStyles: string;
+  keyboardType?: string;
+  placeholder?: string
+};
