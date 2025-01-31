@@ -12,7 +12,7 @@ export type customButton = {
   handlePress: () => void;
   containerStyles: string;
   textStyles?: TextStyle;
-  isLoading: boolean;
+  isLoading?: boolean;
 };
 
 export type fieldProperties = {
@@ -21,15 +21,23 @@ export type fieldProperties = {
   handleChangeText: (newValue: any) => void;
   otherStyles: string;
   keyboardType?: string;
-  placeholder?: string
+  placeholder?: string;
 };
 
-
-export interface GlobalContextType {
+export type GlobalContextType = {
   isLoggedIn: boolean;
   setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
   user: any;
   setUser: React.Dispatch<React.SetStateAction<any>>;
   isLoading: boolean;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
-}
+};
+
+export type SearchBar = {
+  placeholder: string;
+};
+
+export type EmptyFlatList = {
+  title: string;
+  subtitle: string;
+};
