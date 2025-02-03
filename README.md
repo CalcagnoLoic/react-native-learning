@@ -1,54 +1,31 @@
-nettoyer les imports de chaque fichiers
+# Apprentissage de React Native: l'application Aora
 
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=ts,react,tailwind" />
+  </a>
+</p>
 
+![](assets/images/readme/homepage.jpg)
 
-# Welcome to your Expo app 👋
+Dans ce repo, j'ai pu suivre un tuto sur React Native et Expo à l'adresse [suivante](https://www.youtube.com/watch?v=ZBCUegTZF7M). Le but ici était de créer une application fullstack où l'utilisateur peut se connecter, voir les différentes vidéos disponibles, en ajouter ainsi que de voir les vidéos sauvegardées. Le backend géré via appwrite n'a pas été utilisé ici, j'ai tout fait en local pour mocker les données. Cependant, les scripts backend sont disponible tout de même dans la codebase.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+| Ecran d'accueil                       | Se connecter à l'application        | S'inscrire sur l'application         |
+| ------------------------------------- | ----------------------------------- | ------------------------------------ |
+| ![](assets/images/readme/welcome.jpg) | ![](assets/images/readme/login.jpg) | ![](assets/images/readme/signup.jpg) |
 
-## Get started
+| Recherche de vidéos                      | Vidéos non trouvée                       |
+| ---------------------------------------- | ---------------------------------------- |
+| ![](assets/images/readme/search-200.jpg) | ![](assets/images/readme/search-404.jpg) |
 
-1. Install dependencies
+| Profil utilisateur                    |
+| ------------------------------------- |
+| ![](assets/images/readme/profile.jpg) |
 
-   ```bash
-   npm install
-   ```
+| Formulaire de création de posts           | Création d'un post                        |
+| ----------------------------------------- | ----------------------------------------- |
+| ![](assets/images/readme/create-form.jpg) | ![](assets/images/readme/create-post.jpg) |
 
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+| Confirmation pour sauvegarder une vidéo      | Vidéos sauvegardées                        |
+| -------------------------------------------- | ------------------------------------------ |
+| ![](assets/images/readme/alert-bookmark.jpg) | ![](assets/images/readme/saved-videos.jpg) |

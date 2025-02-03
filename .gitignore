@@ -37,8 +37,5 @@ yarn-error.*
 
 app-example
 
-
-videoCollection.ts
-trendingCollection.ts
 videoCollection/
 trendingCollection/
