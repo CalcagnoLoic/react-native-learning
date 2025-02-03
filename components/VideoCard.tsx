@@ -1,4 +1,5 @@
 import { icons } from "@/constants";
+import { AVPlaybackSource, ResizeMode, Video } from "expo-av";
 import { useState } from "react";
 import {
   View,
@@ -7,17 +8,9 @@ import {
   ImageSourcePropType,
   TouchableOpacity,
 } from "react-native";
+import { VideoTypes } from "@/definitions";
 
-type Video = {
-  id: number;
-  title: string;
-  url: string;
-  avatar: ImageSourcePropType;
-  creator: string;
-  thumbnail: ImageSourcePropType;
-};
-
-const VideoCard = ({ video }: { video: Video }) => {
+const VideoCard = ({ video }: { video: VideoTypes }) => {
   const [play, setPlay] = useState<boolean>(false);
 
   return (
@@ -54,7 +47,18 @@ const VideoCard = ({ video }: { video: Video }) => {
       </View>
 
       {play ? (
-        <Text className="text-white">Playing</Text>
+        /*<Video
+          source={video.url as AVPlaybackSource}
+          className="w-full h-60 rounded-xl mt-3"
+          resizeMode={ResizeMode.CONTAIN}
+          useNativeControls
+          shouldPlay
+           onPlaybackStatusUpdate={(status) => {
+            if ("didJustFinish" in status && status.didJustFinish) {
+              setPlay(false);
+            }
+          }}
+        /> */<Text>Clicking</Text>
       ) : (
         <TouchableOpacity
           className="w-full h-56 rounded-xl mt-3 relative justify-center items-center"

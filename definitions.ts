@@ -1,3 +1,4 @@
+import { AVPlaybackSource } from "expo-av";
 import { ImageSourcePropType, TextStyle, ViewStyle } from "react-native";
 
 export type tabsIcons = {
@@ -40,4 +41,32 @@ export type SearchBar = {
 export type EmptyFlatList = {
   title: string;
   subtitle: string;
+};
+
+export type trendingTypes = {
+  posts: {
+    id: number;
+    thumbnail: ImageSourcePropType;
+    uri: AVPlaybackSource;
+  }[];
+};
+
+type item = {
+  id: number;
+  thumbnail: ImageSourcePropType;
+  uri: AVPlaybackSource;
+};
+
+export type TrendingItems = {
+  activeItem: item;
+  item: item;
+};
+
+export type VideoTypes = {
+  id: number;
+  title: string;
+  url: AVPlaybackSource | string;
+  avatar: ImageSourcePropType;
+  creator: string;
+  thumbnail: ImageSourcePropType;
 };

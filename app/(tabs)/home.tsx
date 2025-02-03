@@ -18,6 +18,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import VideoCard from "@/components/VideoCard";
 import { videoCollection } from "@/data/videoCollection";
+import { trendingCollection } from "@/data/trendingCollection";
 
 const Home = () => {
   const { user } = useGlobalContext();
@@ -62,7 +63,7 @@ const Home = () => {
                 Latest Videos
               </Text>
 
-              {/* <Trending posts={[{ id: 1 }, { id: 2 }, { id: 3 }]} /> */}
+              <Trending posts={trendingCollection} />
             </View>
           </View>
         )}
