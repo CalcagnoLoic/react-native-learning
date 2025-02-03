@@ -6,13 +6,12 @@ import {
   Image,
   Alert,
 } from "react-native";
-
 import { images } from "@/constants";
-import FormField from "@/components/FormField";
-import { useState } from "react";
-import CustomButton from "@/components/CustomButton";
 import { Link, router } from "expo-router";
-import { signIn } from "@/lib/appwrite";
+import { useState } from "react";
+
+import CustomButton from "@/components/CustomButton";
+import FormField from "@/components/FormField";
 
 const SignIn = () => {
   const [form, setForm] = useState({

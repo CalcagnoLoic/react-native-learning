@@ -1,9 +1,3 @@
-import CustomButton from "@/components/CustomButton";
-import FormField from "@/components/FormField";
-import { icons } from "@/constants";
-import { newVideo } from "@/definitions";
-import { ResizeMode, Video } from "expo-av";
-import { useState } from "react";
 import {
   Alert,
   Image,
@@ -12,10 +6,16 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import * as DocumentPicker from "expo-document-picker";
+import { icons } from "@/constants";
+import { newVideo } from "@/definitions";
+import { ResizeMode, Video } from "expo-av";
 import { router } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useState } from "react";
+
 import * as ImagePicker from "expo-image-picker";
+import CustomButton from "@/components/CustomButton";
+import FormField from "@/components/FormField";
 
 const Create = () => {
   const [uploading, setUploading] = useState<boolean>(false);

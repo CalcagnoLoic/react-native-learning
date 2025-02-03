@@ -1,9 +1,10 @@
-import "../assets/style/global.css";
-
 import { SplashScreen, Stack } from "expo-router";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
+
 import GlobalProvider from "@/context/GlobalProvider";
+
+import "../assets/style/global.css";
 
 SplashScreen.preventAutoHideAsync();
 

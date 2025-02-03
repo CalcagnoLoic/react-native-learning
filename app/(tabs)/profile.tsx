@@ -1,14 +1,14 @@
-import EmptyState from "@/components/EmptyState";
-import SearchInput from "@/components/SearchInput";
+import { FlatList, TouchableOpacity, View, Image } from "react-native";
+import { icons, images } from "@/constants";
+import { router } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { useGlobalContext } from "@/context/GlobalProvider";
 import { useState, useEffect } from "react";
-import { FlatList, Text, TouchableOpacity, View, Image } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import VideoCard from "@/components/VideoCard";
 import { videoCollection } from "@/data/videoCollection";
-import { router, useLocalSearchParams } from "expo-router";
-import { icons, images } from "@/constants";
+
+import EmptyState from "@/components/EmptyState";
 import InfoBox from "@/components/InfoBox";
+import VideoCard from "@/components/VideoCard";
 
 const Profile = () => {
   const { user, setUser, setIsLoggedIn } = useGlobalContext();

@@ -1,24 +1,21 @@
-import EmptyState from "@/components/EmptyState";
-import SearchInput from "@/components/SearchInput";
-import Trending from "@/components/Trending";
-import { images } from "@/constants";
-import { useGlobalContext } from "@/context/GlobalProvider";
-import { getAllPosts } from "@/lib/appwrite";
-import { useAppwrite } from "@/lib/useAppwrite";
-import { useEffect, useState } from "react";
 import {
-  Alert,
   FlatList,
   Image,
   RefreshControl,
   Text,
   View,
 } from "react-native";
+import { images } from "@/constants";
 import { SafeAreaView } from "react-native-safe-area-context";
-
-import VideoCard from "@/components/VideoCard";
-import { videoCollection } from "@/data/videoCollection";
 import { trendingCollection } from "@/data/trendingCollection";
+import { useGlobalContext } from "@/context/GlobalProvider";
+import { useState } from "react";
+import { videoCollection } from "@/data/videoCollection";
+
+import EmptyState from "@/components/EmptyState";
+import SearchInput from "@/components/SearchInput";
+import Trending from "@/components/Trending";
+import VideoCard from "@/components/VideoCard";
 
 const Home = () => {
   const { user, setUser, setIsLoggedIn } = useGlobalContext();

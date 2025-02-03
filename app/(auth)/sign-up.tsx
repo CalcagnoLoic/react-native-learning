@@ -1,20 +1,17 @@
 import {
-  StyleSheet,
   Text,
   SafeAreaView,
   ScrollView,
   View,
   Image,
-  Dimensions,
   Alert,
 } from "react-native";
-
 import { images } from "@/constants";
-import FormField from "@/components/FormField";
-import { useState } from "react";
-import CustomButton from "@/components/CustomButton";
 import { Link, router } from "expo-router";
-import { createUser } from "@/lib/appwrite";
+import { useState } from "react";
+
+import CustomButton from "@/components/CustomButton";
+import FormField from "@/components/FormField";
 
 const SignUp = () => {
   const [form, setForm] = useState({

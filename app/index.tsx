@@ -1,15 +1,16 @@
-import { Text, View, StyleSheet, ScrollView, Image } from "react-native";
-import { StatusBar } from "expo-status-bar";
+import { images } from "@/constants";
 import { Redirect, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { images } from "@/constants";
-import CustomButton from "@/components/CustomButton";
+import { StatusBar } from "expo-status-bar";
+import { Text, View, ScrollView, Image } from "react-native";
 import { useGlobalContext } from "@/context/GlobalProvider";
 
-export default function Index() {
-  const {isLoading, isLoggedIn} = useGlobalContext()
+import CustomButton from "@/components/CustomButton";
 
-  if(!isLoading && isLoggedIn) return <Redirect href="/home" />
+export default function Index() {
+  const { isLoading, isLoggedIn } = useGlobalContext();
+
+  if (!isLoading && isLoggedIn) return <Redirect href="/home" />;
 
   return (
     <SafeAreaView className="bg-primary h-full">
@@ -61,4 +62,3 @@ export default function Index() {
     </SafeAreaView>
   );
 }
-

@@ -1,9 +1,10 @@
-import { Image, StyleSheet, Text, View } from "react-native";
-import { Tabs, Redirect } from "expo-router";
 import { icons } from "@/constants";
-import { tabsIcons } from "@/definitions";
+import { Image, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import { Tabs, Redirect } from "expo-router";
+import { tabsIcons } from "@/definitions";
 import { useGlobalContext } from "@/context/GlobalProvider";
+
 import React from "react";
 
 const TabIcon = ({ icon, color, name, focused }: tabsIcons) => {

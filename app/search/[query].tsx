@@ -1,12 +1,12 @@
-import EmptyState from "@/components/EmptyState";
-import SearchInput from "@/components/SearchInput";
-import { useGlobalContext } from "@/context/GlobalProvider";
-import { useState, useEffect } from "react";
 import { FlatList, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import VideoCard from "@/components/VideoCard";
-import { videoCollection } from "@/data/videoCollection";
+import { useState, useEffect } from "react";
 import { useLocalSearchParams } from "expo-router";
+import { videoCollection } from "@/data/videoCollection";
+
+import EmptyState from "@/components/EmptyState";
+import SearchInput from "@/components/SearchInput";
+import VideoCard from "@/components/VideoCard";
 
 const Search = () => {
   const { query } = useLocalSearchParams() as { query?: string };
