@@ -77,3 +77,10 @@ export type userInformation = {
   titleStyle?: string;
   subtitle?: string;
 };
+
+export type newVideo = {
+  title: string;
+  video: AVPlaybackSource | null;
+  thumbnail: ImageSourcePropType | null;
+  prompt: string;
+};
