@@ -35,7 +35,7 @@ export type GlobalContextType = {
 };
 
 export type SearchBar = {
-  initialQuery: string;
+  initialQuery?: string;
 };
 
 export type EmptyFlatList = {
@@ -69,4 +69,11 @@ export type VideoTypes = {
   avatar: ImageSourcePropType;
   creator: string;
   thumbnail: ImageSourcePropType;
+};
+
+export type userInformation = {
+  title: string;
+  containerStyles?: string;
+  titleStyle?: string;
+  subtitle?: string;
 };

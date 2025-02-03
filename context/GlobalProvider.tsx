@@ -54,7 +54,7 @@ const GlobalProvider = ({ children }: { children: ReactNode }) => {
 
     const mockUser = {
       id: "12345",
-      name: "John Doe",
+      name: "JSMastery",
       email: "johndoe@aora.com",
     };
 
