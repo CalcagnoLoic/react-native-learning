@@ -131,3 +131,15 @@ export const getLatestPosts = async () => {
     console.log(error);
   }
 };
+
+export const searchPost = async (query: string) => {
+  try {
+    const posts = await databases.listDocuments(databaseId, videoCollectionId, [
+      Query.search("title", query),
+    ]);
+
+    return posts.documents;
+  } catch (error) {
+    console.log(error);
+  }
+};
