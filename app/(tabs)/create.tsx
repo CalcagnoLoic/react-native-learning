@@ -15,6 +15,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as DocumentPicker from "expo-document-picker";
 import { router } from "expo-router";
+import * as ImagePicker from "expo-image-picker";
 
 const Create = () => {
   const [uploading, setUploading] = useState<boolean>(false);
@@ -27,11 +28,10 @@ const Create = () => {
   });
 
   const openPicker = async (selectType: string) => {
-    const result = await DocumentPicker.getDocumentAsync({
-      type:
-        selectType === "image"
-          ? ["image/png", "image/jpg"]
-          : ["video/mp4", "video/gif"],
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: selectType === "image" ? ["images"] : ["videos"],
+      aspect: [4, 3],
+      quality: 1,
     });
 
     if (!result.canceled) {
@@ -55,8 +55,6 @@ const Create = () => {
       setUploading(true);
 
       try {
-        
-
         Alert.alert("Success", "Post uploaded successfully");
         router.push("/home");
       } catch (error) {
@@ -100,9 +98,7 @@ const Create = () => {
               <Video
                 source={form.video}
                 className="w-full h-64 rounded-2xl"
-                useNativeControls
                 resizeMode={ResizeMode.COVER}
-                isLooping
               />
             ) : (
               <View className="w-full h-40 px-4 bg-black-200 rounded-2xl justify-center items-center">
