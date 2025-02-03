@@ -7,11 +7,32 @@ import {
   Image,
   ImageSourcePropType,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import { VideoTypes } from "@/definitions";
 
 const VideoCard = ({ video }: { video: VideoTypes }) => {
   const [play, setPlay] = useState<boolean>(false);
+
+  const submitAlert = () => {
+    Alert.alert(
+      "Confirmation",
+      "Are you sure you want to liked this video?",
+      [
+        {
+          text: "Of course",
+          onPress: () => console.log("Liked!"),
+          style: "default",
+        },
+        {
+          text: "Don't like it",
+          onPress: () => console.log("Unlike"),
+          style: "destructive",
+        },
+      ],
+      { cancelable: true }
+    );
+  };
 
   return (
     <View className="flex-col items-center px-4 mb-14">
@@ -41,9 +62,15 @@ const VideoCard = ({ video }: { video: VideoTypes }) => {
           </View>
         </View>
 
-        <View className="pt-2">
-          <Image source={icons.menu} className="w-5 h-5" resizeMode="contain" />
-        </View>
+        <TouchableOpacity onPress={submitAlert}>
+          <View className="pt-2">
+            <Image
+              source={icons.menu}
+              className="w-5 h-5"
+              resizeMode="contain"
+            />
+          </View>
+        </TouchableOpacity>
       </View>
 
       {play ? (
@@ -58,7 +85,7 @@ const VideoCard = ({ video }: { video: VideoTypes }) => {
               setPlay(false);
             }
           }}
-        /> */<Text>Clicking</Text>
+        /> */ <Text>Clicking</Text>
       ) : (
         <TouchableOpacity
           className="w-full h-56 rounded-xl mt-3 relative justify-center items-center"

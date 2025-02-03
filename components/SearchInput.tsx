@@ -11,7 +11,7 @@ import {
   View,
 } from "react-native";
 
-const SearchInput = ({ initialQuery }: SearchBar) => {
+const SearchInput = ({ initialQuery, otherPlaceholder }: SearchBar) => {
   const pathname = usePathname();
   const [query, setQuery] = useState<string>(initialQuery || "");
 
@@ -21,7 +21,9 @@ const SearchInput = ({ initialQuery }: SearchBar) => {
         className="text-base text-white font-pregular mt-0.5 flex-1"
         value={query}
         placeholderTextColor="#CDCDE0"
-        placeholder="Search for a video topic"
+        placeholder={
+          otherPlaceholder ? otherPlaceholder : "Search for a video topic"
+        }
         onChangeText={(e) => setQuery(e)}
       />
 

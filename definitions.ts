@@ -36,6 +36,7 @@ export type GlobalContextType = {
 
 export type SearchBar = {
   initialQuery?: string;
+  otherPlaceholder?: string
 };
 
 export type EmptyFlatList = {
